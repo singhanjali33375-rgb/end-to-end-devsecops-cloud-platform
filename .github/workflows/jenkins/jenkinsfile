@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/end-to-end-devsecops-cloud-platform.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t devsecops-app .'
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                sh 'echo Trivy & SonarQube Scan'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo Deploying to Kubernetes'
+            }
+        }
+    }
+}
