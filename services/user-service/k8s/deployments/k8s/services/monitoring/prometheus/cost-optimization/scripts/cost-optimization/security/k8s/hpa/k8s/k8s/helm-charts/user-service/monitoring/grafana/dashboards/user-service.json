@@ -1,0 +1,14 @@
+{
+  "title": "User Service Dashboard",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CPU Usage",
+      "targets": [
+        {
+          "expr": "container_cpu_usage_seconds_total"
+        }
+      ]
+    }
+  ]
+}
